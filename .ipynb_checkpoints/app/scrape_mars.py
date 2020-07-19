@@ -2,7 +2,6 @@ from splinter import Browser
 from bs4 import BeautifulSoup
 import pandas as pd
 import datetime as dt
-import time
 import re
 
 
@@ -113,9 +112,6 @@ def hemispheres(browser):
 def twitter_weather(browser):
     url = "https://twitter.com/marswxreport?lang=en"
     browser.visit(url)
-
-    # Pause for 5 seconds to let the Twitter page load before extracting the html
-    time.sleep(5)
 
     html = browser.html
     weather_soup = BeautifulSoup(html, "html.parser")
